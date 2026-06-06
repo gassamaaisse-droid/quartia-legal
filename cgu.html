@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditions Générales d'Utilisation — Quartia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bleu: #1a73e8;
+      --bleu-fonce: #1a2e5a;
+      --bleu-clair: #e8f0fe;
+      --texte: #1a2e5a;
+      --texte-doux: #4a5568;
+      --fond: #f8faff;
+      --blanc: #ffffff;
+      --bordure: #e2e8f0;
+      --accent: #f59e0b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--fond);
+      color: var(--texte);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #1a2e5a 0%, #1a73e8 100%);
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .logo-nom {
+      font-family: 'Sora', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    header h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-date {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.9);
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── CONTENEUR ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── SOMMAIRE ── */
+    .sommaire {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 16px rgba(26,46,90,0.06);
+    }
+
+    .sommaire h2 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--bleu);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .sommaire ol {
+      list-style: none;
+      counter-reset: sommaire;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    @media (max-width: 560px) {
+      .sommaire ol { grid-template-columns: 1fr; }
+    }
+
+    .sommaire li {
+      counter-increment: sommaire;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sommaire li::before {
+      content: counter(sommaire, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--bleu);
+      background: var(--bleu-clair);
+      border-radius: 6px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+    }
+
+    .sommaire a {
+      font-size: 13px;
+      color: var(--texte-doux);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sommaire a:hover { color: var(--bleu); }
+
+    /* ── SECTIONS ── */
+    .section {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(26,46,90,0.04);
+      scroll-margin-top: 24px;
+    }
+
+    .section-num {
+      display: inline-block;
+      background: var(--bleu);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--bleu-fonce);
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      font-size: 14px;
+      color: var(--texte-doux);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      margin: 12px 0 14px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .section ul li, .section ol li {
+      font-size: 14px;
+      color: var(--texte-doux);
+      padding: 6px 0 6px 24px;
+      position: relative;
+      border-bottom: 1px solid #f0f4f8;
+      line-height: 1.7;
+    }
+
+    .section ul li:last-child, .section ol li:last-child { border-bottom: none; }
+
+    .section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--bleu);
+      font-weight: 700;
+    }
+
+    .section ol { counter-reset: item; }
+    .section ol li { counter-increment: item; }
+    .section ol li::before {
+      content: counter(item) '.';
+      position: absolute;
+      left: 0;
+      color: var(--bleu);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: var(--bleu-clair);
+      border-left: 3px solid var(--bleu);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13px;
+      color: var(--bleu-fonce);
+      line-height: 1.7;
+    }
+
+    .highlight strong { font-weight: 700; }
+
+    .warning {
+      background: #fff8e1;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13px;
+      color: #78350f;
+      line-height: 1.7;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, #1a2e5a, #1a73e8);
+      border-radius: 14px;
+      padding: 28px;
+      color: #fff;
+      margin-top: 16px;
+    }
+
+    .contact-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .contact-ligne {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact-ligne:last-child { margin-bottom: 0; }
+
+    .contact-icone {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .contact-ligne a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--bordure);
+      font-size: 12px;
+      color: #999;
+    }
+
+    footer a {
+      color: var(--bleu);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer .footer-liens {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed;
+      bottom: 28px; right: 24px;
+      background: var(--bleu-fonce);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(26,46,90,0.25);
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 0;
+      transform: translateY(10px);
+      z-index: 100;
+    }
+
+    .back-top.visible { opacity: 1; transform: translateY(0); }
+    .back-top:hover { background: var(--bleu); }
+
+    strong { color: var(--bleu-fonce); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">🏘️</div>
+    <span class="logo-nom">Quartia</span>
+  </div>
+  <h1>Conditions Générales d'Utilisation</h1>
+  <p>Application mobile communautaire — Paris 15e</p>
+  <div class="badge-date">📅 En vigueur depuis le 1er juin 2026 · Version 1.0</div>
+</header>
+
+<div class="container">
+
+  <!-- SOMMAIRE -->
+  <div class="sommaire">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#s1">Présentation de l'application</a></li>
+      <li><a href="#s2">Acceptation des CGU</a></li>
+      <li><a href="#s3">Inscription et comptes</a></li>
+      <li><a href="#s4">Types de comptes</a></li>
+      <li><a href="#s5">Contenu publié</a></li>
+      <li><a href="#s6">Comportements interdits</a></li>
+      <li><a href="#s7">Données personnelles</a></li>
+      <li><a href="#s8">Propriété intellectuelle</a></li>
+      <li><a href="#s9">Responsabilités</a></li>
+      <li><a href="#s10">Suspension et suppression</a></li>
+      <li><a href="#s11">Modification des CGU</a></li>
+      <li><a href="#s12">Contact et support</a></li>
+    </ol>
+  </div>
+
+  <!-- ARTICLE 1 -->
+  <div class="section" id="s1">
+    <span class="section-num">ARTICLE 01</span>
+    <h2>Présentation de l'application</h2>
+    <p><strong>Quartia</strong> est une application mobile communautaire dédiée aux habitants, associations et commerçants du quartier. Elle a pour vocation de renforcer le lien social local en permettant :</p>
+    <ul>
+      <li>La publication et consultation d'actualités de quartier</li>
+      <li>L'organisation et la participation à des événements locaux</li>
+      <li>La mise en relation entre habitants, associations et commerçants</li>
+      <li>La recherche de bénévoles et de partenariats associatifs</li>
+      <li>Le partage d'informations utiles à la vie du quartier</li>
+    </ul>
+    <p>Quartia est éditée et exploitée à titre personnel. L'application est disponible sur iOS (App Store) et Android (Google Play Store).</p>
+    <div class="highlight">
+      <strong>📍 Zone géographique :</strong> Quartia est actuellement déployée dans le <strong>15e arrondissement de Paris</strong>. L'extension à d'autres quartiers est prévue ultérieurement.
+    </div>
+  </div>
+
+  <!-- ARTICLE 2 -->
+  <div class="section" id="s2">
+    <span class="section-num">ARTICLE 02</span>
+    <h2>Acceptation des conditions</h2>
+    <p>L'utilisation de l'application Quartia implique l'acceptation pleine et entière des présentes Conditions Générales d'Utilisation (CGU).</p>
+    <p>En créant un compte ou en utilisant les fonctionnalités de l'application, l'utilisateur reconnaît avoir lu, compris et accepté les présentes CGU.</p>
+    <div class="warning">
+      ⚠️ <strong>Si vous n'acceptez pas ces conditions</strong>, vous ne devez pas utiliser l'application Quartia.
+    </div>
+    <p>Ces CGU s'appliquent à tous les utilisateurs, qu'ils soient inscrits ou non, et à toutes les fonctionnalités disponibles dans l'application.</p>
+  </div>
+
+  <!-- ARTICLE 3 -->
+  <div class="section" id="s3">
+    <span class="section-num">ARTICLE 03</span>
+    <h2>Inscription et gestion des comptes</h2>
+    <p>L'accès à la plupart des fonctionnalités de Quartia nécessite la création d'un compte personnel. L'inscription est gratuite.</p>
+    <p><strong>Lors de l'inscription, l'utilisateur s'engage à :</strong></p>
+    <ul>
+      <li>Fournir des informations exactes, complètes et à jour</li>
+      <li>Utiliser une adresse email valide et accessible</li>
+      <li>Choisir un mot de passe sécurisé et le garder confidentiel</li>
+      <li>Ne pas créer de compte au nom d'une autre personne sans autorisation</li>
+      <li>Ne pas créer plusieurs comptes pour un même usage</li>
+    </ul>
+    <p>L'utilisateur est seul responsable de la confidentialité de ses identifiants. Toute activité réalisée depuis son compte lui est imputée. En cas de compromission de son compte, il doit en informer immédiatement l'équipe Quartia via <strong>bonjour@quartia.eu</strong>.</p>
+  </div>
+
+  <!-- ARTICLE 4 -->
+  <div class="section" id="s4">
+    <span class="section-num">ARTICLE 04</span>
+    <h2>Types de comptes utilisateurs</h2>
+    <p>Quartia propose trois types de comptes, chacun adapté à un profil spécifique :</p>
+    <ul>
+      <li><strong>👤 Compte Habitant</strong> — Pour les résidents du quartier souhaitant participer à la vie locale, consulter les actualités, rejoindre des associations et interagir avec la communauté.</li>
+      <li><strong>🏢 Compte Association</strong> — Pour les associations loi 1901 ou groupements citoyens souhaitant publier leurs actualités, organiser des événements et recruter des bénévoles.</li>
+      <li><strong>🏪 Compte Commerçant</strong> — Pour les commerces et professionnels locaux souhaitant communiquer avec les habitants et établir des partenariats.</li>
+    </ul>
+    <div class="highlight">
+      <strong>Engagement :</strong> Les comptes Association et Commerçant s'engagent à fournir des informations véridiques sur leur structure et à n'utiliser Quartia qu'à des fins légitimes en rapport avec leur activité locale.
+    </div>
+  </div>
+
+  <!-- ARTICLE 5 -->
+  <div class="section" id="s5">
+    <span class="section-num">ARTICLE 05</span>
+    <h2>Contenu publié par les utilisateurs</h2>
+    <p>Les utilisateurs peuvent publier différents types de contenus sur Quartia : actualités, événements, annonces de bénévolat, offres de partenariat, commentaires et messages.</p>
+    <p><strong>En publiant du contenu, l'utilisateur déclare que :</strong></p>
+    <ul>
+      <li>Il dispose des droits nécessaires sur ce contenu</li>
+      <li>Le contenu est exact, loyal et ne trompe pas les autres utilisateurs</li>
+      <li>Le contenu respecte la législation française en vigueur</li>
+      <li>Il accorde à Quartia une licence d'affichage non exclusive pour diffuser ce contenu au sein de l'application</li>
+    </ul>
+    <p>Quartia se réserve le droit de modérer, modifier ou supprimer tout contenu qui ne respecterait pas ces conditions, sans préavis ni justification.</p>
+  </div>
+
+  <!-- ARTICLE 6 -->
+  <div class="section" id="s6">
+    <span class="section-num">ARTICLE 06</span>
+    <h2>Comportements interdits</h2>
+    <p>Il est strictement interdit d'utiliser Quartia pour :</p>
+    <ul>
+      <li>Publier des contenus haineux, discriminatoires, racistes, sexistes ou diffamatoires</li>
+      <li>Harceler, menacer ou intimider d'autres utilisateurs</li>
+      <li>Diffuser des informations fausses ou trompeuses</li>
+      <li>Usurper l'identité d'une personne, d'une association ou d'un commerce</li>
+      <li>Faire de la publicité commerciale non autorisée ou du spam</li>
+      <li>Collecter des données personnelles d'autres utilisateurs sans leur consentement</li>
+      <li>Tenter de pirater, déstabiliser ou surcharger les serveurs de l'application</li>
+      <li>Utiliser l'application à des fins illégales ou contraires à l'ordre public</li>
+    </ul>
+    <div class="warning">
+      ⚠️ Tout manquement à ces règles peut entraîner la <strong>suspension immédiate</strong> du compte, sans préavis.
+    </div>
+  </div>
+
+  <!-- ARTICLE 7 -->
+  <div class="section" id="s7">
+    <span class="section-num">ARTICLE 07</span>
+    <h2>Données personnelles et confidentialité</h2>
+    <p>Quartia collecte et traite des données personnelles dans le cadre de son fonctionnement. Ces traitements sont effectués conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong> et à la loi Informatique et Libertés.</p>
+    <p><strong>Données collectées :</strong></p>
+    <ul>
+      <li>Informations de profil : prénom, nom, pseudo, adresse email, téléphone (optionnel), photo (optionnelle)</li>
+      <li>Informations de localisation : quartier(s) de résidence</li>
+      <li>Contenu publié : actualités, événements, commentaires, messages</li>
+      <li>Données de connexion : horodatage des connexions, type de compte</li>
+    </ul>
+    <p><strong>Vos droits :</strong> Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression, de portabilité et d'opposition sur vos données. Pour exercer ces droits, contactez-nous à <strong>bonjour@quartia.eu</strong>.</p>
+    <div class="highlight">
+      📋 Pour plus de détails, consultez notre <strong><a href="https://www.iubenda.com/privacy-policy/51681385" target="_blank" style="color: var(--bleu);">Politique de Confidentialité complète</a></strong>.
+    </div>
+    <p><strong>Services tiers utilisés :</strong></p>
+    <ul>
+      <li><strong>Supabase</strong> — Hébergement de la base de données et authentification (serveurs UE)</li>
+      <li><strong>Resend</strong> — Envoi d'emails transactionnels</li>
+      <li><strong>Expo / React Native</strong> — Infrastructure de l'application mobile</li>
+    </ul>
+  </div>
+
+  <!-- ARTICLE 8 -->
+  <div class="section" id="s8">
+    <span class="section-num">ARTICLE 08</span>
+    <h2>Propriété intellectuelle</h2>
+    <p>L'ensemble des éléments constituant l'application Quartia — nom, logo, design, code source, textes, icônes — sont la propriété exclusive de leurs auteurs et sont protégés par le droit de la propriété intellectuelle.</p>
+    <p>Toute reproduction, copie, modification ou exploitation, totale ou partielle, de ces éléments sans autorisation préalable écrite est strictement interdite.</p>
+    <p>En ce qui concerne les contenus publiés par les utilisateurs, chaque utilisateur conserve la propriété de ses publications. Il accorde cependant à Quartia une licence gratuite, non exclusive, pour afficher ce contenu dans l'application.</p>
+  </div>
+
+  <!-- ARTICLE 9 -->
+  <div class="section" id="s9">
+    <span class="section-num">ARTICLE 09</span>
+    <h2>Responsabilités et limitations</h2>
+    <p>Quartia met tout en œuvre pour assurer la disponibilité et la fiabilité de l'application, mais ne peut garantir un service ininterrompu. Des interruptions peuvent survenir pour maintenance ou en cas de force majeure.</p>
+    <p><strong>Quartia ne saurait être tenu responsable :</strong></p>
+    <ul>
+      <li>Des contenus publiés par les utilisateurs</li>
+      <li>Des interactions entre utilisateurs hors de l'application</li>
+      <li>Des dommages résultant d'une utilisation frauduleuse ou non conforme aux CGU</li>
+      <li>Des interruptions de service dues à des tiers (hébergeurs, opérateurs réseau)</li>
+      <li>De la perte de données suite à un incident technique imprévisible</li>
+    </ul>
+    <p>L'utilisateur est seul responsable des contenus qu'il publie et des interactions qu'il engage avec d'autres membres de la communauté.</p>
+  </div>
+
+  <!-- ARTICLE 10 -->
+  <div class="section" id="s10">
+    <span class="section-num">ARTICLE 10</span>
+    <h2>Suspension et suppression de compte</h2>
+    <p><strong>À l'initiative de l'utilisateur :</strong> L'utilisateur peut supprimer son compte à tout moment depuis la section Profil de l'application. La suppression entraîne l'effacement définitif et irréversible de toutes ses données.</p>
+    <p><strong>À l'initiative de Quartia :</strong> Quartia se réserve le droit de suspendre ou supprimer tout compte en cas de :</p>
+    <ul>
+      <li>Non-respect des présentes CGU</li>
+      <li>Comportement nuisant à la communauté ou à d'autres utilisateurs</li>
+      <li>Publication de contenus illicites ou inappropriés</li>
+      <li>Inactivité prolongée (plus de 24 mois sans connexion)</li>
+      <li>Demande d'une autorité judiciaire ou administrative compétente</li>
+    </ul>
+    <div class="highlight">
+      En cas de suspension abusive, l'utilisateur peut contacter <strong>bonjour@quartia.eu</strong> pour formuler une réclamation.
+    </div>
+  </div>
+
+  <!-- ARTICLE 11 -->
+  <div class="section" id="s11">
+    <span class="section-num">ARTICLE 11</span>
+    <h2>Modification des CGU</h2>
+    <p>Quartia se réserve le droit de modifier les présentes CGU à tout moment, notamment pour s'adapter à l'évolution de l'application, à de nouvelles fonctionnalités ou à des changements législatifs.</p>
+    <p>En cas de modification substantielle, les utilisateurs seront informés via une notification dans l'application ou par email. La poursuite de l'utilisation de l'application après notification vaut acceptation des nouvelles conditions.</p>
+    <p>La version en vigueur est toujours accessible depuis la section <em>Profil → Informations légales</em> de l'application.</p>
+  </div>
+
+  <!-- ARTICLE 12 -->
+  <div class="section" id="s12">
+    <span class="section-num">ARTICLE 12</span>
+    <h2>Contact et support</h2>
+    <p>Pour toute question relative aux présentes CGU, toute demande concernant vos données personnelles, ou tout signalement d'un contenu inapproprié, vous pouvez nous contacter :</p>
+    <div class="contact-card">
+      <h3>📬 Nous contacter</h3>
+      <div class="contact-ligne">
+        <div class="contact-icone">✉️</div>
+        <span>Email : <a href="mailto:bonjour@quartia.eu">bonjour@quartia.eu</a></span>
+      </div>
+      <div class="contact-ligne">
+        <div class="contact-icone">🌐</div>
+        <span>Site : <a href="https://quartia.eu" target="_blank">quartia.eu</a></span>
+      </div>
+      <div class="contact-ligne">
+        <div class="contact-icone">📍</div>
+        <span>Zone de service : Paris 15e, Île-de-France</span>
+      </div>
+      <div class="contact-ligne">
+        <div class="contact-icone">⏱️</div>
+        <span>Délai de réponse : sous 5 jours ouvrés</span>
+      </div>
+    </div>
+    <p style="margin-top: 20px; font-size: 13px; color: #999;">
+      En cas de litige, les parties s'engagent à rechercher une solution amiable avant tout recours judiciaire. À défaut, les tribunaux français sont seuls compétents. La présente convention est soumise au droit français.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-liens">
+    <a href="https://www.iubenda.com/privacy-policy/51681385">Politique de confidentialité</a>
+    <a href="https://www.iubenda.com/privacy-policy/51681385/cookie-policy">Politique des cookies</a>
+    <a href="mailto:bonjour@quartia.eu">Contact</a>
+  </div>
+  <p>© 2026 Quartia · Tous droits réservés · Application communautaire Paris 15e</p>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Haut</button>
+
+<script>
+  const btn = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
